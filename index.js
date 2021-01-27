@@ -1,4 +1,4 @@
-export default function * chunkify(iterable, chunkSize) {
+export default function * chunkify(iterable, chunkSize, start = 0) {
 	if (typeof iterable[Symbol.iterator] !== 'function') {
 		throw new TypeError('Expected an `Iterable` in the first argument');
 	}
@@ -8,6 +8,10 @@ export default function * chunkify(iterable, chunkSize) {
 	}
 
 	if (Array.isArray(iterable)) {
+		if (start) {
+			iterable.splice(0, start);
+		}
+
 		for (let index = 0; index < iterable.length; index += chunkSize) {
 			yield iterable.slice(index, index + chunkSize);
 		}
