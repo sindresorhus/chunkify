@@ -49,4 +49,4 @@ The size of the chunks.
 
  The starting index (zero base) for the splitting
 
- If start is greater than the length of iterable an empty array will be returned
+ If `start` is greater than the length of iterable an empty array will be returned
