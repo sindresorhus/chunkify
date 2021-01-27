@@ -1,6 +1,5 @@
-
-const test = require('ava');
-const chunkify = require('./index');
+import test from 'ava';
+import chunkify from './index.js';
 
 test('array', t => {
 	t.deepEqual(
