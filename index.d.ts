@@ -16,4 +16,7 @@ console.log([...chunkify([1, 2, 3, 4], 3)]);
 //=> [[1, 2, 3], [4]]
 ```
 */
-export default function chunkify<T>(iterable: Iterable<T>, chunkSize: number): IterableIterator<T[]>;
+export default function chunkify<T>(
+	iterable: Iterable<T>,
+	chunkSize: number
+): Iterable<T[]>;
