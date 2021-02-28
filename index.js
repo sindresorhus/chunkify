@@ -1,4 +1,4 @@
-export default function chunkify(iterable, chunkSize) {
+export default function* chunkify(iterable, chunkSize) {
 	if (typeof iterable[Symbol.iterator] !== 'function') {
 		throw new TypeError('Expected an `Iterable` in the first argument');
 	}
@@ -9,30 +9,26 @@ export default function chunkify(iterable, chunkSize) {
 		);
 	}
 
-	return {
-		* [Symbol.iterator]() {
-			if (Array.isArray(iterable)) {
-				for (let index = 0; index < iterable.length; index += chunkSize) {
-					yield iterable.slice(index, index + chunkSize);
-				}
-
-				return;
-			}
-
-			let chunk = [];
-
-			for (const value of iterable) {
-				chunk.push(value);
-
-				if (chunk.length === chunkSize) {
-					yield chunk;
-					chunk = [];
-				}
-			}
-
-			if (chunk.length > 0) {
-				yield chunk;
-			}
+	if (Array.isArray(iterable)) {
+		for (let index = 0; index < iterable.length; index += chunkSize) {
+			yield iterable.slice(index, index + chunkSize);
 		}
-	};
+
+		return;
+	}
+
+	let chunk = [];
+
+	for (const value of iterable) {
+		chunk.push(value);
+
+		if (chunk.length === chunkSize) {
+			yield chunk;
+			chunk = [];
+		}
+	}
+
+	if (chunk.length > 0) {
+		yield chunk;
+	}
 }
