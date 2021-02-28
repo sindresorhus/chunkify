@@ -1,4 +1,4 @@
-export default function* chunkify(iterable, chunkSize) {
+export default function * chunkify(iterable, chunkSize) {
 	if (typeof iterable[Symbol.iterator] !== 'function') {
 		throw new TypeError('Expected an `Iterable` in the first argument');
 	}
