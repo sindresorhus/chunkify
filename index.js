@@ -4,9 +4,7 @@ export default function chunkify(iterable, chunkSize) {
 	}
 
 	if (!(Number.isSafeInteger(chunkSize) && chunkSize > 0)) {
-		throw new TypeError(
-			`Expected \`chunkSize\` to be a an integer from 1 and up, got \`${chunkSize}\``
-		);
+		throw new TypeError(`Expected \`chunkSize\` to be an integer from 1 and up, got \`${chunkSize}\``);
 	}
 
 	return {
@@ -33,6 +31,6 @@ export default function chunkify(iterable, chunkSize) {
 			if (chunk.length > 0) {
 				yield chunk;
 			}
-		}
+		},
 	};
 }
