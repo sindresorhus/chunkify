@@ -5,13 +5,13 @@
 ## Install
 
 ```sh
-npm install @sindresorhus/chunkify
+npm install chunkify
 ```
 
 ## Usage
 
 ```js
-import chunkify from '@sindresorhus/chunkify';
+import chunkify from 'chunkify';
 
 console.log([...chunkify([1, 2, 3, 4], 2)]);
 //=> [[1, 2], [3, 4]]
@@ -46,7 +46,7 @@ The size of the chunks.
 When dealing with large datasets, breaking data into manageable chunks can optimize the batch processing tasks.
 
 ```js
-import chunkify from '@sindresorhus/chunkify';
+import chunkify from 'chunkify';
 
 const largeDataSet = [...Array(1000).keys()];
 const chunkedData = chunkify(largeDataSet, 50);
@@ -62,7 +62,7 @@ Dividing data into chunks can be useful in parallel processing to distribute wor
 
 ```js
 import {Worker} from 'node:worker_threads';
-import chunkify from '@sindresorhus/chunkify';
+import chunkify from 'chunkify';
 
 const data = [/* some large dataset */];
 const chunkedData = chunkify(data, 20);
@@ -82,7 +82,7 @@ for (const [index, chunk] of chunkedData.entries()) {
 Splitting a large number of network requests into chunks can help in managing the load on the network and preventing rate limiting.
 
 ```js
-import chunkify from '@sindresorhus/chunkify';
+import chunkify from 'chunkify';
 
 const urls = [/* Array of URLs */];
 

@@ -7,7 +7,7 @@ Split an iterable into evenly sized chunks. The last chunk could be smaller.
 
 @example
 ```
-import chunkify from '@sindresorhus/chunkify';
+import chunkify from 'chunkify';
 
 console.log([...chunkify([1, 2, 3, 4], 2)]);
 //=> [[1, 2], [3, 4]]
