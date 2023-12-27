@@ -1,6 +1,6 @@
 {
 	"name": "chunkify",
-	"version": "1.0.0",
+	"version": "5.0.0",
 	"description": "Split an iterable into evenly sized chunks",
 	"license": "MIT",
 	"repository": "sindresorhus/chunkify",
